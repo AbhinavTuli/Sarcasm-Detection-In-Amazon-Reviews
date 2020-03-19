@@ -41,36 +41,36 @@ def save_tokenlist(tokenList, filename):
 
 
 #saved clean data 
-for file in listdir("./txt_sentoken/train/pos/"):
+for file in listdir("./og/train/pos/"):
 	try:
-		text=load_doc("./txt_sentoken/train/pos/"+file)
+		text=load_doc("./og/train/pos/"+file)
 		tokenList=clean_doc(text)
 		save_tokenlist(tokenList, './clean/train/pos/'+file)
 	except Exception as e:
 		print(file)
 		print(e)
 
-for file in listdir("./txt_sentoken/train/neg/"):
+for file in listdir("./og/train/neg/"):
 	try:
-		text=load_doc("./txt_sentoken/train/neg/"+file)
+		text=load_doc("./og/train/neg/"+file)
 		tokenList=clean_doc(text)
 		save_tokenlist(tokenList, './clean/train/neg/'+file)
 	except Exception as e:
 		print(file)
 		print(e)
 
-for file in listdir("./txt_sentoken/test/pos/"):
+for file in listdir("./og/test/pos/"):
 	try:
-		text=load_doc("./txt_sentoken/test/pos/"+file)
+		text=load_doc("./og/test/pos/"+file)
 		tokenList=clean_doc(text)
 		save_tokenlist(tokenList, './clean/test/pos/'+file)
 	except Exception as e:
 		print(file)
 		print(e)
 
-for file in listdir("./txt_sentoken/test/neg/"):
+for file in listdir("./og/test/neg/"):
 	try:
-		text=load_doc("./txt_sentoken/test/neg/"+file)
+		text=load_doc("./og/test/neg/"+file)
 		tokenList=clean_doc(text)
 		save_tokenlist(tokenList, './clean/test/neg/'+file)
 	except Exception as e:
