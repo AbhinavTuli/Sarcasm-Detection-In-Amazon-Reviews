@@ -2,6 +2,7 @@ from string import punctuation
 from os import listdir
 from collections import Counter
 from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
 
 # load doc into memory
 def load_doc(filename):
@@ -27,7 +28,9 @@ def clean_doc(doc):
 	tokens = [w for w in tokens if not w in stop_words]
 	# filter out short tokens
 	tokens = [word for word in tokens if len(word) > 1]
-	return tokens
+	porter = PorterStemmer()
+	stemmed = [porter.stem(word) for word in tokens]
+	return stemmed
 
 #save all tokens from a doc into file
 def save_tokenlist(tokenList, filename):
