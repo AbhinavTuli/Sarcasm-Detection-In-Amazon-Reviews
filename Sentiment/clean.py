@@ -28,9 +28,10 @@ def clean_doc(doc):
 	tokens = [w for w in tokens if not w in stop_words]
 	# filter out short tokens
 	tokens = [word for word in tokens if len(word) > 1]
-	porter = PorterStemmer()
-	stemmed = [porter.stem(word) for word in tokens]
-	return stemmed
+	# porter = PorterStemmer()
+	# stemmed = [porter.stem(word) for word in tokens]
+	# return stemmed
+	return tokens
 
 #save all tokens from a doc into file
 def save_tokenlist(tokenList, filename):
@@ -42,40 +43,19 @@ def save_tokenlist(tokenList, filename):
 	# close file
 	file.close()
 
+def clean_dir(ogDir,newDir):
+	for file in listdir(ogDir):
+		try:
+			text=load_doc(ogDir+file)
+			tokenList=clean_doc(text)
+			save_tokenlist(tokenList, newDir+file)
+		except Exception as e:
+			print(file,e)
 
 #saved clean data 
-for file in listdir("./og/train/pos/"):
-	try:
-		text=load_doc("./og/train/pos/"+file)
-		tokenList=clean_doc(text)
-		save_tokenlist(tokenList, './clean/train/pos/'+file)
-	except Exception as e:
-		print(file)
-		print(e)
 
-for file in listdir("./og/train/neg/"):
-	try:
-		text=load_doc("./og/train/neg/"+file)
-		tokenList=clean_doc(text)
-		save_tokenlist(tokenList, './clean/train/neg/'+file)
-	except Exception as e:
-		print(file)
-		print(e)
-
-for file in listdir("./og/test/pos/"):
-	try:
-		text=load_doc("./og/test/pos/"+file)
-		tokenList=clean_doc(text)
-		save_tokenlist(tokenList, './clean/test/pos/'+file)
-	except Exception as e:
-		print(file)
-		print(e)
-
-for file in listdir("./og/test/neg/"):
-	try:
-		text=load_doc("./og/test/neg/"+file)
-		tokenList=clean_doc(text)
-		save_tokenlist(tokenList, './clean/test/neg/'+file)
-	except Exception as e:
-		print(file)
-		print(e)
+if __name__ == "__main__":
+	clean_dir("./og/train/pos/","./clean/train/pos/")
+	clean_dir("./og/train/neg/","./clean/train/neg/")
+	clean_dir("./og/test/pos/","./clean/test/pos/")
+	clean_dir("./og/test/neg/","./clean/test/neg/")
