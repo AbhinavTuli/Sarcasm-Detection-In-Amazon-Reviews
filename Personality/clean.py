@@ -22,7 +22,8 @@ def readfile(filename,threshold,length_of_sentence = 20):
             temp_tuple[1].replace("\\\'","\'")
             temp_tuple[1].replace("/","\'")
             df.iloc[indexing,0] = temp_tuple[1] #Text stored
-            sent_tok = sent_tokenize(temp_tuple[1]) #Get tokenized sentences
+            temp_lower = temp_tuple[1].lower()
+            sent_tok = sent_tokenize(temp_lower) #Get tokenized sentences
             num_sent = len(sent_tok)
             words_in_sent = []
             for sent in sent_tok:
@@ -48,6 +49,6 @@ def readfile(filename,threshold,length_of_sentence = 20):
     # return 0
 
 if __name__ == "__main__":
-    df = readfile('essays.txt',64)
+    df = readfile('datasets/essays.txt',64)
     df.to_pickle('clean_essays.pkl')
     # print(df.head())

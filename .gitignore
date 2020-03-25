@@ -5,3 +5,4 @@
 *.pyc
 *.dat
 *.vscode
+*.ipynb_checkpoints
