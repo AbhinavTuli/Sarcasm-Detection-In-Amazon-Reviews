@@ -1,8 +1,9 @@
 *.pkl
-*.csv
+# *.csv
 *.txt
 *.json
 *.pyc
 *.dat
 *.vscode
 *.ipynb_checkpoints
+*.pt

@@ -67,7 +67,6 @@ def get_word_embedding_mat(max_len,word_list,glove_model):
         try:
             word_matrix[i,:,:] = glove_model[word]
         except KeyError:
-            # print("helloo")
             word_matrix[i,:,:] = np.random.uniform(-0.25,0.25,size = 300)
     return word_matrix
 
