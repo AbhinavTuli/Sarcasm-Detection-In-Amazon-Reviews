@@ -4,7 +4,7 @@ from torch.utils.data import sampler
 import numpy as np
 import bcolz
 import pickle
-
+import re
 from sklearn.model_selection import train_test_split
 
 def train_test_data(df,emotion = 2):
@@ -25,17 +25,37 @@ def train_test_data(df,emotion = 2):
     
     df.dropna(how='all')
     train, test = train_test_split(df, train_size=0.8)
-    Xtrain = train.iloc[:,1].values #getting the list of words for Word Vec
-    Xtrain = Xtrain.reshape((Xtrain.shape[0],1))
-    Xtest = test.iloc[:,1].values
-    Xtest = Xtest.reshape((Xtest.shape[0],1))
-    Ytrain = train.iloc[:,1].values
-    Ytrain = Ytrain.reshape(Ytrain.shape[0],1)
-    Ytest = test.iloc[:,emotion].values.astype('int32')
-    Ytest = Ytest.reshape(Ytest.shape[0],1)
-    len_train = (train.iloc[:,7].values).astype('int32')
-    len_test = (test.iloc[:,7].values).astype('int32')
-    return Xtrain,Xtest,Ytrain,Ytest,len_train,len_test
+    train['Text'] = train['Text'].apply(lambda x : str(x).replace("�","\'"))
+    train['Text'] = train['Text'].apply(lambda x : str(x).replace("\\\'","\'"))
+    train['Text'] = train['Text'].apply(lambda x : str(x).replace("/","\'"))
+    train['Text'] = train['Text'].apply(lambda x : str(x).lower())
+    train['Text'] = train['Text'].apply(lambda x : re.sub(' +',' ', str(x)))
+    
+    test['Text'] = test['Text'].apply(lambda x : str(x).replace("�","\'"))
+    test['Text'] = test['Text'].apply(lambda x : str(x).replace("\\\'","\'"))
+    test['Text'] = test['Text'].apply(lambda x : str(x).replace("/","\'"))
+    test['Text'] = test['Text'].apply(lambda x : re.sub(' +',' ', str(x)))
+    test['Text'] = test['Text'].apply(lambda x : str(x).lower())
+
+    Xtrain = train.iloc[:,0].values #getting the list of words for Word Vec
+    # Xtrain = Xtrain.reshape((Xtrain.shape[0],1))
+    Xtest = test.iloc[:,0].values
+    # Xtest = Xtest.reshape((Xtest.shape[0],1))
+    Ytrain = train.iloc[:,emotion].values
+    # Ytrain = Ytrain.reshape(Ytrain.shape[0],1)
+    Ytest = test.iloc[:,emotion].values
+    # Ytest = Ytest.reshape(Ytest.shape[0],1)
+    len_train = (train.iloc[:,7].values)
+    len_test = (test.iloc[:,7].values)
+    df1 = pd.DataFrame(columns=['EssayText','Personality'],index = range(Xtrain.shape[0]))
+    df1['EssayText'] = Xtrain
+    df1['Personality'] = Ytrain
+    df2 = pd.DataFrame(columns=['EssayText','Personality'],index = range(Xtest.shape[0]))
+    df2['EssayText'] = Xtest
+    df2['Personality'] = Ytest
+    df1.dropna(inplace=True)
+    df2.dropna(inplace=True)
+    return df1,df2
 
 
 def get_glove_dict():
@@ -142,3 +162,4 @@ def get_broken_sentences(n_H0,breaker_length,minibatch_X,index):
                     actual_words_of_sents.append(values)
 
     return actual_words_of_sents
+
