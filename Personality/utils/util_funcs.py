@@ -31,6 +31,7 @@ def train_test_data(df,emotion = 2):
     train, test = train_test_split(df, train_size=0.8)
     Xtrain = train.iloc[:,0].values #getting the list of words for Word Vec
     trainmairesse = train.iloc[:,6].values
+    trainidx = train.iloc[:,7].values
     # Xtrain = Xtrain.reshape((Xtrain.shape[0],1))
     Xtest = test.iloc[:,0].values
     # Xtest = Xtest.reshape((Xtest.shape[0],1))
@@ -38,7 +39,7 @@ def train_test_data(df,emotion = 2):
     # Ytrain = Ytrain.reshape(Ytrain.shape[0],1)
     Ytest = test.iloc[:,emotion].values
     testmairesse = test.iloc[:,6].values
-
+    testidx = test.iloc[:,7].values
     # Ytest = Ytest.reshape(Ytest.shape[0],1)
     # len_train = (train.iloc[:,7].values)
     # len_test = (test.iloc[:,7].values)
@@ -46,10 +47,12 @@ def train_test_data(df,emotion = 2):
     df1['EssayText'] = Xtrain
     df1['Personality'] = Ytrain
     df1['mairesse'] = trainmairesse
+    df1['idx'] = trainidx
     df2 = pd.DataFrame(columns=['EssayText','Personality','mairesse'],index = range(Xtest.shape[0]))
     df2['EssayText'] = Xtest
     df2['Personality'] = Ytest
     df2['mairesse'] = testmairesse
+    df2['idx'] = testidx
     df1.dropna(inplace=True)
     df2.dropna(inplace=True)
     return df1,df2
