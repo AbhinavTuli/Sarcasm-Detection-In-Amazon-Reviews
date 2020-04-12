@@ -7,3 +7,8 @@
 *.vscode
 *.ipynb_checkpoints
 #*.pt
+glove.6B.300d.txt.pt
+.vector_cache
+glove.6B.100d.txt.pt
+*GloVe
+glove.6B.100d.txt.pt

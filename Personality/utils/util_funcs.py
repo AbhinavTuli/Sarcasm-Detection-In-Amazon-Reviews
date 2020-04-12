@@ -165,6 +165,6 @@ def get_broken_sentences(n_H0,breaker_length,minibatch_X,index):
 if __name__ == "__main__":
     # df = pd.read_pickle('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/datasets/clean_essays.pkl')
     df = pd.read_csv(PATH + 'essays_added.csv')
-    train,test = train_test_data(df,5)
-    train.to_csv('trainOPN.csv',index = False)
-    test.to_csv('testOPN.csv',index=False)
+    train,test = train_test_data(df,3)
+    train.to_csv('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/utils/Essay to Sentences/trainAGR.csv',index = False)
+    test.to_csv('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/utils/Essay to Sentences/testAGR.csv',index=False)
