@@ -4,7 +4,7 @@
 - [Dataset-Sentiment](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset)
 - [Dataset-Personality](https://drive.google.com/file/d/1xTg5iJZzzNEf3jJJKhBpgwkMnYDHaKQJ/view?usp=sharing)
 - [Dataset-Reviews](https://github.com/ef2020/SarcasmAmazonReviewsCorpus)
-- [GloVe pre-trained](http://nlp.stanford.edu/data/wordvecs/glove.6B.zip)
+<!-- - [GloVe pre-trained](http://nlp.stanford.edu/data/wordvecs/glove.6B.zip) -->
 
 ## Authors
 - [Sanchit Ahuja](https://github.com/sanchit-ahuja)
@@ -21,25 +21,16 @@
   ```
 - **Directory Structure** :
     - Sentiment
-        - clean
-        - og
-        - ```clean.py```
-        - models
+        - Results
+        - ```Sentiment_CNN.ipynb```
     - Personality
         - utils
             - ```util_funcs.py```
         - datasets
-            - ```clean_essays.pkl```
-            - ```clean_essays.csv```
-        - ```clean.py```
-    - GloVe
-        - 6B.300.dat (bcolz files for dealing with vectors)
-        - ```6B.300_idx.pkl```
-        - ```6B.300_workds.pkl```
-        - ```glove_model.pkl```
-        - ```glove_parse.py```
     - ```environment.yml```
+    - Sarcasm
+        - Sarcasm.ipynb
     - README.md
     - `.gitignore`
 
-You would need to download all the datasets and put them in their proper places. You would then need to run the clean scripts and generation scripts to get the preprocessed data.
+### This repository is WIP. Things might not work as they intend to. Please wait for this message to be removed.
