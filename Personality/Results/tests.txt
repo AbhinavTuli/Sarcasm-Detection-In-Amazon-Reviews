@@ -1,0 +1,36 @@
+fc = 70
+train acc = 92.04
+val acc = 58.32
+
+fc = 80
+train acc = 99.85
+val acc = 62.30
+
+fc = 90
+train acc = 98.19
+val acc = 58.50
+
+fc = 100
+train acc = 99.95
+val acc = 58.84
+
+fc = 110
+train acc = 99.55
+val acc = 60.48
+
+fc = 120
+train acc = 89.06
+val acc = 59.45
+
+fc = 130
+train acc = 99.50
+val acc = 58.47
+
+fc = 140
+train acc = 99.75
+val acc = 58.27
+
+fc = 150
+train acc = 99.95
+val acc = 62.15
+
