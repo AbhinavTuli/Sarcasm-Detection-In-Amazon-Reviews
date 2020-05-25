@@ -142,4 +142,12 @@ The 2 different architectures:-
 
 ### The best results are shown below.
 <img src="./Sarcasm/Sarcasm_Results.PNG" alt="d" width="400"/>
-<!-- ### This repository is WIP. Things might not work as they intend to. Please wait for this message to be removed. -->
+
+
+### Instructions to run the Sarcasm notebook
+- Please update the PATH variable to your working directory.
+- The SentimentModel2.pt, AGR.pt, CON.pt, EXT.pt, NEU.pt, OPN.pt files are the respective weights for the Sentiment Model and the Five personality models.
+- The TEXT.pt, AGR_txt.pt, CON_txt.pt, EXT_txt.pt, NEU_txt.pt, OPN_txt.pt files are the respective Sentiment Embeddings and the Five Personality Embeddings.
+- Store the sentiment weights and embeddings in your working directory.
+- Store the personality weights and embeddings in a folder named Personality in your working directory.
+- Store the reviews_w_stars.csv, which contains the parsed Amazon reviews in your working directory.
