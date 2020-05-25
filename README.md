@@ -52,10 +52,26 @@
 ## 1. Sentiment
 We used the IMDB dataset for binary sentiment classification consisting of 50000 highly polar movie reviews classified as either Positive or Negative.
 The train, validation and test split was 17500, 7500 and 25000 respectively.
-### Train and Validation results
+We tried 2 different architectures:-
+### First Model
+#### Model Architecture
+<img src="./Sentiment/first model architecture.jpeg" alt="d" width="800"/>
+
+#### Train and Validation results
+<img src="./Sentiment/Results/Old model Train and Validation Accuracy.png" alt="d" width="400"/>
+
+#### Test results
+<img src="./Sentiment/Results/Old Model Test Accuracy.png" alt="d" width="400"/>
+
+### New Model
+
+#### Model Architecture
+<img src="./Sentiment/new model architecture.jpeg" alt="d" width="800"/>
+
+#### Train and Validation results
 <img src="./Sentiment/Results/Train and Validation Accuracy.png" alt="d" width="400"/>
 
-### Test results
+#### Test results
 <img src="./Sentiment/Results/Test Accuracy.png" alt="d" width="400"/>
 
 ## 2. Personality
