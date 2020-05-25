@@ -51,8 +51,12 @@
 ## Results
 ## 1. Sentiment
 (DESCRIPTION ABOUT THE DATASET DEDO YAHAN PAR @TULI)
+We used the IMDB dataset for binary sentiment classification consisting of 50000 highly polar movie reviews classified as either Positive or Negative.
+The train, validation and split was 17500, 7500 and 25000 respectively.
 ### Train and Validation results
 <img src="./Sentiment/Results/Train and Validation Accuracy.png" alt="d" width="400"/>
+### Test results
+<img src="./Sentiment/Results/Test Accuracy.png" alt="d" width="400"/>
 
 ## 2. Personality
 - The dataset that we used to classifying personality is called OCEAN dataset. It consists of five personalities majorly. \
