@@ -50,9 +50,14 @@
 
 ## Results
 ## 1. Sentiment
-We used the IMDB dataset for binary sentiment classification consisting of 50000 highly polar movie reviews classified as either Positive or Negative.
+Sentiment analysis is the interpretation and classification of emotions (positive and negative) within text data 
+For training, we used the IMDB dataset consisting of 50000 highly polar movie reviews classified as either Positive or Negative. 
 The train, validation and test split was 17500, 7500 and 25000 respectively.
-We tried 2 different architectures:-
+Once the model was trained, we could extract the sentiment features from the first fully connected layer.
+
+We experimented with a couple of CNN architectures, each having its own pros and cons.
+
+The 2 different architectures:-
 ### First Model
 #### Model Architecture
 <img src="./Sentiment/first model architecture.jpeg" alt="d" width="800"/>
@@ -131,4 +136,10 @@ We tried 2 different architectures:-
 ## Limitations
 - The major limitation is that the dataset for Personality is too small. As a result we had a significant amount of overfitting in our results. 
 
+## 3.Sarcasm
+- The dataset that we used to classifying sarcasm is the imbalanced Amazon Review dataset which consists of ironic and regular reviews. 
+- For sarcasm, we experimented with several classifiers such as MLP, RF, KNN and Logistic Regression and ultimately SVM worked best for the use case with 88.09%.
+
+### The best results are shown below.
+<img src="./Sarcasm/Sarcasm_Results.PNG" alt="d" width="400"/>
 <!-- ### This repository is WIP. Things might not work as they intend to. Please wait for this message to be removed. -->
