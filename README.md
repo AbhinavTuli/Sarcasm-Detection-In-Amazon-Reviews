@@ -81,6 +81,7 @@ We tried 2 different architectures:-
     3. EXT - [E] Extroversion. (outgoing/energetic vs. solitary/reserved)
     4. AGR - [A] Agreeableness. (friendly/compassionate vs. challenging/detached)
     5. NER- [N] Neuroticism. (sensitive/nervous vs. secure/confident)
+- The architecture we used for training the personality was a CNN architecture. It consists of a word embedding layer of 300 dimension,kernel size of 3,4 and 5 initially with a Feature map size of 50, a max pooling layer of 2 and for the second convolution layer we used a kernel size of 2 with 100 feature maps, and finally a FC layer of 80 (After a lot of experimentation)
 - For personality, we had run couple of experiments dabbling with sending the complete text as well as chunking the text into sentences and then sending them to the network. We observed that chunking the text into sentences performed slightly better than sending the complete text. 
 - For our experiment above we experimented with varied number of fully connected layer at the end. We tabulate our results below for both experiments down below.
 ### Complete text
@@ -113,6 +114,7 @@ We tried 2 different architectures:-
 | 150 | 99.95      |  62.04 |
 
 - We can observe that the chunked text converged significantly faster to a good accuracy as compared to the normal text. We also observed that the model with 80 fully connected layers worked the best.
+- But the problem with using chunked text was that the features extracted from this model didn't improve the accuracy while making predictions for the final dataset (Amazon reviews). In the end, we stuck to the initial model i.e. sending the complete text to the model which gave us decent accuracy.
  - The above experiments were ran on OPN personality.
 
 ### The best results for all the 5 personalities are tabulated below.

@@ -2,13 +2,13 @@ import pandas as pd
 from torch.utils.data import DataLoader
 from torch.utils.data import sampler
 import numpy as np
-import bcolz
+# import bcolz
 import pickle
 import re
 from sklearn.model_selection import train_test_split
 
 
-PATH = '/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/'
+PATH = '/home/sanchit/DetectSarcasmUsingCNN/Personality/'
 
 
 def train_test_data(df,emotion = 2):
@@ -30,46 +30,46 @@ def train_test_data(df,emotion = 2):
     df.dropna(how='all')
     train, test = train_test_split(df, train_size=0.8)
     Xtrain = train.iloc[:,0].values #getting the list of words for Word Vec
-    trainmairesse = train.iloc[:,6].values
-    trainidx = train.iloc[:,7].values
+    # trainmairesse = train.iloc[:,6].values
+    # trainidx = train.iloc[:,7].values
     # Xtrain = Xtrain.reshape((Xtrain.shape[0],1))
     Xtest = test.iloc[:,0].values
     # Xtest = Xtest.reshape((Xtest.shape[0],1))
-    Ytrain = train.iloc[:,emotion].values
+    Ytrain = (train.iloc[:,emotion].values).astype('int32')
     # Ytrain = Ytrain.reshape(Ytrain.shape[0],1)
-    Ytest = test.iloc[:,emotion].values
-    testmairesse = test.iloc[:,6].values
-    testidx = test.iloc[:,7].values
+    Ytest = test.iloc[:,emotion].values.astype('int32')
+    # testmairesse = test.iloc[:,6].values
+    # testidx = test.iloc[:,7].values
     # Ytest = Ytest.reshape(Ytest.shape[0],1)
     # len_train = (train.iloc[:,7].values)
     # len_test = (test.iloc[:,7].values)
-    df1 = pd.DataFrame(columns=['EssayText','Personality','mairesse'],index = range(Xtrain.shape[0]))
+    df1 = pd.DataFrame(columns=['EssayText','Personality'],index = range(Xtrain.shape[0]))
     df1['EssayText'] = Xtrain
     df1['Personality'] = Ytrain
-    df1['mairesse'] = trainmairesse
-    df1['idx'] = trainidx
-    df2 = pd.DataFrame(columns=['EssayText','Personality','mairesse'],index = range(Xtest.shape[0]))
+    # df1['mairesse'] = trainmairesse
+    # df1['idx'] = trainidx
+    df2 = pd.DataFrame(columns=['EssayText','Personality'],index = range(Xtest.shape[0]))
     df2['EssayText'] = Xtest
     df2['Personality'] = Ytest
-    df2['mairesse'] = testmairesse
-    df2['idx'] = testidx
+    # df2['mairesse'] = testmairesse
+    # df2['idx'] = testidx
     df1.dropna(inplace=True)
     df2.dropna(inplace=True)
     return df1,df2
 
 
-def get_glove_dict():
-    ''' 
-        Loading the pretrained glove model into Python dict.
+# def get_glove_dict():
+#     ''' 
+#         Loading the pretrained glove model into Python dict.
 
-        Returns:
-            Glove dictionary
-    '''
-    vectors = bcolz.open('../../GloVe/6B.300.dat')[:]
-    words = pickle.load(open('../../GloVe/6B.300_words.pkl', 'rb'))
-    word2idx = pickle.load(open(f'../../GloVe/6B.300_idx.pkl', 'rb'))
-    glove = {w: vectors[word2idx[w]] for w in words}
-    return glove
+#         Returns:
+#             Glove dictionary
+#     '''
+#     vectors = bcolz.open('../../GloVe/6B.300.dat')[:]
+#     words = pickle.load(open('../../GloVe/6B.300_words.pkl', 'rb'))
+#     word2idx = pickle.load(open(f'../../GloVe/6B.300_idx.pkl', 'rb'))
+#     glove = {w: vectors[word2idx[w]] for w in words}
+#     return glove
 
 def get_word_embedding_mat(max_len,word_list,glove_model):
     '''
@@ -165,6 +165,6 @@ def get_broken_sentences(n_H0,breaker_length,minibatch_X,index):
 if __name__ == "__main__":
     # df = pd.read_pickle('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/datasets/clean_essays.pkl')
     df = pd.read_csv(PATH + 'essays_added.csv')
-    train,test = train_test_data(df,3)
-    train.to_csv('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/utils/Essay to Sentences/trainAGR.csv',index = False)
-    test.to_csv('/home/sanchit/Desktop/DetectSarcasmUsingCNN/Personality/utils/Essay to Sentences/testAGR.csv',index=False)
+    train,test = train_test_data(df,2)
+    train.to_csv('trainEXT.csv',index = False)
+    test.to_csv('testEXT.csv',index=False)

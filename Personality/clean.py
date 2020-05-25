@@ -49,6 +49,7 @@ def readfile(filename,threshold,length_of_sentence = 20):
     # return 0
 
 if __name__ == "__main__":
-    df = readfile('datasets/essays.txt',64)
-    df.to_pickle('clean_essays.pkl')
-    # print(df.head())
+    df = readfile('essays.txt',64)
+    df.to_csv('essays_added.csv',index=False)
+    # df.to_pickle('clean_essays.pkl')
+    print(df.head())
