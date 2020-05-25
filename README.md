@@ -134,5 +134,5 @@ We tried 2 different architectures:-
 - For sarcasm, we experimented with several classifiers such as MLP, RF, KNN and Logistic Regression and ultimately SVM worked best for the use case with 88.09%.
 
 ### The best results are shown below.
-<img src="./Sarcasm/Sarcasm_Results.png" alt="d" width="400"/>
+<img src="./Sarcasm/Sarcasm_Results.PNG" alt="d" width="400"/>
 <!-- ### This repository is WIP. Things might not work as they intend to. Please wait for this message to be removed. -->
