@@ -150,7 +150,7 @@ The 2 different architectures:-
 
 ### Instructions to run the Sarcasm notebook
 - Please update the PATH variable to your working directory.
-- The SentimentModel2.pt, AGR.pt, CON.pt, EXT.pt, NEU.pt, OPN.pt files are the respective weights for the Sentiment Model and the Five personality models.
+- The SentimentModel.pt, AGR.pt, CON.pt, EXT.pt, NEU.pt, OPN.pt files are the respective weights for the Sentiment Model and the Five personality models.
 - The TEXT.pt, AGR_txt.pt, CON_txt.pt, EXT_txt.pt, NEU_txt.pt, OPN_txt.pt files are the respective Sentiment Embeddings and the Five Personality Embeddings.
 - Store the sentiment weights and embeddings in your working directory.
 - Store the personality weights and embeddings in a folder named Personality in your working directory.
