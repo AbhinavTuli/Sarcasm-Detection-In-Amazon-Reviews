@@ -50,9 +50,14 @@
 
 ## Results
 ## 1. Sentiment
-We used the IMDB dataset for binary sentiment classification consisting of 50000 highly polar movie reviews classified as either Positive or Negative.
+Sentiment analysis is the interpretation and classification of emotions (positive and negative) within text data 
+For training, we used the IMDB dataset consisting of 50000 highly polar movie reviews classified as either Positive or Negative. 
 The train, validation and test split was 17500, 7500 and 25000 respectively.
-We tried 2 different architectures:-
+Once the model was trained, we could extract the sentiment features from the first fully connected layer.
+
+We experimented with a couple of CNN architectures, each having its own pros and cons.
+
+The 2 different architectures:-
 ### First Model
 #### Model Architecture
 <img src="./Sentiment/first model architecture.jpeg" alt="d" width="800"/>
