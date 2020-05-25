@@ -11,6 +11,7 @@
 - [Abhinav Tuli](https://github.com/AbhinavTuli)
 - [Abhijeet Borole](https://github.com/abhijeetborole)
 
+#### [Drive Link for all models and datasets](https://drive.google.com/drive/folders/1j3gznRgPccFykFihfPFtiCPwvHIO1Cwl?usp=sharing)
 
 ## Objectives and Implementation
 - Read the paper thoroughly and understood all the necessary requiremnents to apply the paper to our datasets.
@@ -32,8 +33,10 @@
         - ```Sentiment_CNN.ipynb```
     - Personality
         - utils
+        - ```Training_Personality.ipynb```
             - ```util_funcs.py```
         - datasets
+        - Results
     - ```environment.yml```
     - Sarcasm
         - Sarcasm.ipynb
@@ -58,7 +61,7 @@ Once the model was trained, we could extract the sentiment features from the fir
 We experimented with a couple of CNN architectures, each having its own pros and cons.
 
 The 2 different architectures:-
-### First Model
+### Our modified version of the proposed model
 #### Model Architecture
 <img src="./Sentiment/first model architecture.jpeg" alt="d" width="800"/>
 
@@ -68,7 +71,7 @@ The 2 different architectures:-
 #### Test results
 <img src="./Sentiment/Results/Old Model Test Accuracy.png" alt="d" width="400"/>
 
-### New Model
+### Paper's model
 
 #### Model Architecture
 <img src="./Sentiment/new model architecture.jpeg" alt="d" width="800"/>
@@ -124,13 +127,13 @@ The 2 different architectures:-
 
 ### The best results for all the 5 personalities are tabulated below.
 
-| Personality       | Train acc.      | Val Acc  |
+| Personality       | Val Acc (Using text)      | Val Acc (Using chunks)  |
 | ------------- |:-------------:| -----:|
-| OPN      | 86.63 |   62.41 |
-| NEU | 99.75|    57.55|
-| EXT |    99.65  |  55.96 |
-| CON |   98.89  |  52.19 |
-| AGR |   99.14   |  52.65 |
+| OPN      | 57.63 |   58.41 |
+| NEU | 56.75|    57.55|
+| EXT |    55.65  |  55.96 |
+| CON |   52.89  |  52.19 |
+| AGR |   53.28   |  52.65 |
 
 
 ## Limitations
