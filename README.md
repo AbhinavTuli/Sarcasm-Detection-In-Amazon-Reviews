@@ -49,7 +49,8 @@
 - You will need to change the PATH variable to your local path. You will also need to change the csv file names for loading into the dataloader in the notebook.
 - We have provided all the pre-trained models in a drive link and its better to use them directly than training the model again.
 - For sentiment, you can directly run the cells and train the model. The dataset was already available in the torchtext module.
-- (CNN-SVM INSTRUCTIONS HERE BOROLE and apni notebook ka likh de ki wohi use karein)
+### Model Architecture described below
+<img src="./Personality/arch.png" alt="d" width="800"/>
 
 ## Results
 ## 1. Sentiment
