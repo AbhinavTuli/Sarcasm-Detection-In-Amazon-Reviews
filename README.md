@@ -129,4 +129,10 @@ We tried 2 different architectures:-
 ## Limitations
 - The major limitation is that the dataset for Personality is too small. As a result we had a significant amount of overfitting in our results. 
 
+## 3.Sarcasm
+- The dataset that we used to classifying sarcasm is the imbalanced Amazon Review dataset which consists of ironic and regular reviews. 
+- For sarcasm, we experimented with several classifiers such as MLP, RF, KNN and Logistic Regression and ultimately SVM worked best for the use case with 88.09%.
+
+### The best results are shown below.
+
 <!-- ### This repository is WIP. Things might not work as they intend to. Please wait for this message to be removed. -->
