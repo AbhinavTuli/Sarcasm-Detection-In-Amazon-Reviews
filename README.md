@@ -49,8 +49,7 @@
 - You will need to change the PATH variable to your local path. You will also need to change the csv file names for loading into the dataloader in the notebook.
 - We have provided all the pre-trained models in a drive link and its better to use them directly than training the model again.
 - For sentiment, you can directly run the cells and train the model. The dataset was already available in the torchtext module.
-### Model Architecture described below
-<img src="./Personality/arch.png" alt="d" width="800"/>
+
 
 ## Results
 ## 1. Sentiment
@@ -93,6 +92,9 @@ The 2 different architectures:-
 - The architecture we used for training the personality was a CNN architecture. It consists of a word embedding layer of 300 dimension,kernel size of 3,4 and 5 initially with a Feature map size of 50, a max pooling layer of 2 and for the second convolution layer we used a kernel size of 2 with 100 feature maps, and finally a FC layer of 80 (After a lot of experimentation)
 - For personality, we had run couple of experiments dabbling with sending the complete text as well as chunking the text into sentences and then sending them to the network. We observed that chunking the text into sentences performed slightly better than sending the complete text. 
 - For our experiment above we experimented with varied number of fully connected layer at the end. We tabulate our results below for both experiments down below.
+### Model Architecture described below
+<img src="./Personality/arch.png" alt="d" width="800"/>
+
 ### Complete text
 - This experiment was done on a single personality and we extrapolated the results for other personalites as well.
 
