@@ -54,6 +54,7 @@ We used the IMDB dataset for binary sentiment classification consisting of 50000
 The train, validation and test split was 17500, 7500 and 25000 respectively.
 ### Train and Validation results
 <img src="./Sentiment/Results/Train and Validation Accuracy.png" alt="d" width="400"/>
+
 ### Test results
 <img src="./Sentiment/Results/Test Accuracy.png" alt="d" width="400"/>
 
