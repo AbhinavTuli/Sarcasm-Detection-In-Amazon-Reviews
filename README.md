@@ -1,4 +1,4 @@
-# A Deeper Look into Sarcastic Tweets Using Deep Convolutional Neural Networks
+# Sarcasm Detection in Amazon Reviews Using Deep Convolutional Neural Networks
 
 - [Paper](https://sentic.net/sarcasm-detection-with-deep-convolutional-neural-networks.pdf)
 - [Dataset-Sentiment](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
